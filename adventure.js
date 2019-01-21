@@ -216,7 +216,7 @@ function wapenZoeken(){
     inventoryItem.style.top = "340px";
     inventoryItem.onclick = pickUpSleutel;
     if(inventory['sleutel'] != true) {
-        button1.onclick = prisonLevel1;
+        button1.onclick = prisonLevell;
     }
 }
 
@@ -225,11 +225,24 @@ function pickUpSleutel(){
     inventoryItem.style.display = 'none';
     inventory['sleutel']=true;
     if(inventory['sleutel'] != null) {
-        button1.onclick = prisonLevel1;
+        button1.onclick = prisonLevell;
     }
 }
 
-
+function prisonLevell(){
+    gameContainer.style.backgroundImage = "url(img/level1.jpg)";
+    description.innerHTML= "Klik op start om te beginnen";  
+    title.innerHTML = "Je voelt je niet veilig in de gevangenis wat ga je doen om veilig te voelen.";
+    button1.innerHTML = " bij een gang aan sluiten";
+    button1.onclick = prisonLevel2;
+    button2.innerHTML = "bij politie aangeven";
+    button2.onclick = prisonAangeven;
+    button3.innerHTML = "wapen zoeken om je zelf te verdedigen";
+    button2.style.display = "inline";
+    button3.style.display = "none";
+    title.style.color = "white";
+    inventoryItem.style.display = "none";
+}
 function prisonLevel2(){
     gameContainer.style.backgroundImage = "url(img/level2.jpg)";
     description.innerHTML= "Klik op start om te beginnen";  
